@@ -1,41 +1,45 @@
-const startBtn = document.querySelector("#startGame");
-const startPlay = document.querySelector("#startPlay");
-const gameCard = document.querySelector("#gameCard");
+// const startBtn = document.querySelector("#startGame");
+// const startPlay = document.querySelector("#startPlay");
+// const gameCard = document.querySelector("#gameCard");
 
-gameCard.style.display = "none";
-startBtn.addEventListener("click", hideStartBtn);
+// gameCard.style.display = "none";
+// startBtn.addEventListener("click", hideStartBtn);
+
+// let computerScore = 0;
+//   let userScore = 0;
+
+// function hideStartBtn() {
+//   startPlay.style.display = "none";
+//   gameCard.style.display = "block";
+//   gamePlay(userSelection);
+//   // return prompt.target.value
+// }
+// // console.log(hideStartBtn())
+
 
 let computerScore = 0;
-  let userScore = 0;
+let userScore = 0;
 
-function hideStartBtn() {
-  startPlay.style.display = "none";
-  gameCard.style.display = "block";
-  gamePlay(userSelection);
-  // return prompt.target.value
-}
-// console.log(hideStartBtn())
-// let computerScore = 0;
-// let userScore = 0;
-function gamePlay() {
+console.log("You are about to engage in a best of three with the machine in Rock, Paper, Scissors")
+
   do {
-    //User number
-    // const prompt = require("prompt-sync")();
+    // User number
+    const prompt = require("prompt-sync")();
 
-    // const userSelection = prompt("Please Select Rock, Paper, or Scissors:    ");
-    // console.log(`You chose ${userSelection}`);
+    const userSelection = prompt("Please Select Rock, Paper, or Scissors:    ");
+    console.log(`You chose: ${userSelection}`);
+
     // Computer number
-    let userSelection = prompt("Please Select Rock, Paper, or Scissors:  ");
     const num = Math.floor(Math.random() * 3);
     switch (num) {
       case 0:
-        console.log("Rock");
+        console.log("The computer chose: Rock");
         break;
       case 1:
-        console.log("Paper");
+        console.log("The computer chose: Paper");
         break;
       case 2:
-        console.log("Scissors");
+        console.log("The computer chose: Scissors");
         break;
       default:
         console.log("Please choose one of Rock, Paper, or Scissors");
@@ -72,6 +76,6 @@ function gamePlay() {
     );
   } while (userScore < 3 && computerScore < 3);
   {
-    console.log("game over");
+    console.log("Game over");
   }
-}
+
