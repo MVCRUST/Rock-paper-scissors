@@ -43,6 +43,7 @@ main {
     align-items: center;
     flex-direction: column;
     height: 40%;
+    width: 80%;
 }
 
 button {
@@ -56,4 +57,26 @@ button {
     padding: 6px 15px;
     font-family: var(--ff-display);
     letter-spacing: 1px;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #efa702;
+}
+
+#gameCard {
+    border-radius: 10px;
+    border: 3px dashed black;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+#gameCard > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #efa702;
+    text-shadow: 1px 1px 1px black;
 }

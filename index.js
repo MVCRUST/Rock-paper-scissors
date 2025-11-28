@@ -1,12 +1,27 @@
+const startBtn = document.querySelector('#startGame');
+const startPlay = document.querySelector('#startPlay');
+const gameCard = document.querySelector('#gameCard');
+
+gameCard.style.display = 'none'
+startBtn.addEventListener('click', hideStartBtn)
+
+function hideStartBtn() {
+  startPlay.style.display = 'none'
+  gameCard.style.display = 'block'
+  prompt('Please Select Rock, Paper, or Scissors:  ')
+  // return prompt.target.value
+}
+console.log(hideStartBtn())
 let computerScore = 0;
 let userScore = 0;
+
 do {
   //User number
-  const prompt = require("prompt-sync")();
+  // const prompt = require("prompt-sync")();
 
-  const userSelection = prompt("Please Select Rock, Paper, or Scissors:    ");
-  console.log(`You chose ${userSelection}`);
-
+  // const userSelection = prompt("Please Select Rock, Paper, or Scissors:    ");
+  // console.log(`You chose ${userSelection}`);
+  let userSelection = 'Rock';
   // Computer number
   const num = Math.floor(Math.random() * 3);
   switch (num) {
@@ -53,5 +68,5 @@ do {
     `You have: ${userScore} points, the computer has: ${computerScore} points.`
   );
 } while (userScore < 3 && computerScore < 3){
-    return console.log("game over")
+    console.log("game over")
 };
