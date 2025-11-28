@@ -1,4 +1,4 @@
-A live link to the game: rockpaperscissorslaf.netlify.app
+[A live link to the game](rockpaperscissorslaf.netlify.app)
 
 # Rock-paper-scissors
 The following files contain a first to three head-to-head with the machine to see who can win at Rock, Paper, Scissors!
