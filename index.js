@@ -1,77 +1,86 @@
 const startBtn = document.querySelector("#startGame");
 const startPlay = document.querySelector("#startPlay");
 const gameCard = document.querySelector("#gameCard");
+const form = document.querySelector('form');
 
 gameCard.style.display = "none";
 startBtn.addEventListener("click", hideStartBtn);
 
-let computerScore = 0;
-  let userScore = 0;
-
 function hideStartBtn() {
   startPlay.style.display = "none";
   gameCard.style.display = "block";
-  gamePlay(userSelection);
-  // return prompt.target.value
 }
-// console.log(hideStartBtn())
-// let computerScore = 0;
-// let userScore = 0;
-function gamePlay() {
-  do {
-    //User number
-    // const prompt = require("prompt-sync")();
 
-    // const userSelection = prompt("Please Select Rock, Paper, or Scissors:    ");
-    // console.log(`You chose ${userSelection}`);
-    // Computer number
-    let userSelection = prompt("Please Select Rock, Paper, or Scissors:  ");
-    const num = Math.floor(Math.random() * 3);
-    switch (num) {
-      case 0:
-        console.log("Rock");
-        break;
-      case 1:
-        console.log("Paper");
-        break;
-      case 2:
-        console.log("Scissors");
-        break;
-      default:
-        console.log("Please choose one of Rock, Paper, or Scissors");
-    }
+let computerScore = 0;
+let userScore = 0;
 
-    if (userSelection == "Rock" && num == 0) {
-      console.log("Draw");
-    } else if (userSelection == "Rock" && num == 1) {
-      computerScore++;
-      console.log("You lose");
-    } else if (userSelection == "Rock" && num == 2) {
-      userScore++;
-      console.log("You win");
-    } else if (userSelection == "Paper" && num == 0) {
-      userScore++;
-      console.log("You win");
-    } else if (userSelection == "Paper" && num == 1) {
-      console.log("You draw");
-    } else if (userSelection == "Paper" && num == 2) {
-      computerScore++;
-      console.log("You lose");
-    } else if (userSelection == "Scissors" && num == 0) {
-      computerScore++;
-      console.log("You lose");
-    } else if (userSelection == "Scissors" && num == 1) {
-      userScore++;
-      console.log("You win");
-    } else if (userSelection == "Scissors" && num == 2) {
-      userScore++;
-      console.log("You draw");
-    }
-    console.log(
-      `You have: ${userScore} points, the computer has: ${computerScore} points.`
-    );
-  } while (userScore < 3 && computerScore < 3);
-  {
-    console.log("game over");
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const selection = document.querySelector('input[name="rps"]:checked')
+
+  if (!selection) {
+    alert("Please choose rock, paper or scissors.");
+    return;
   }
-}
+
+  const userChoice = selection.value.toLowerCase();
+
+  const num = Math.floor(Math.random() * 3);
+  const computerChoice = ["rock", "paper", "scissors"][num];
+  // switch (num) {
+  //   case 0:
+  //     console.log("Rock");
+  //     break;
+  //   case 1:
+  //     console.log("Paper");
+  //     break;
+  //   case 2:
+  //     console.log("Scissors");
+  //     break;
+  //   default:
+  //     console.log("Please choose one of Rock, Paper, or Scissors");
+  // }
+
+  console.log("User chose:", userChoice);
+  console.log("Computer chose:", computerChoice);
+
+  if (userChoice == "rock" && num == 0) {
+    console.log("Draw");
+  } else if (userChoice == "rock" && num == 1) {
+    computerScore++;
+    console.log("You lose");
+  } else if (userChoice == "rock" && num == 2) {
+    userScore++;
+    console.log("You win");
+  } else if (userChoice == "paper" && num == 0) {
+    userScore++;
+    console.log("You win");
+  } else if (userChoice == "paper" && num == 1) {
+    console.log("You draw");
+  } else if (userChoice == "paper" && num == 2) {
+    computerScore++;
+    console.log("You lose");
+  } else if (userChoice == "scissors" && num == 0) {
+    computerScore++;
+    console.log("You lose");
+  } else if (userChoice == "scissors" && num == 1) {
+    userScore++;
+    console.log("You win");
+  } else if (userChoice == "scissors" && num == 2) {
+    userScore++;
+    console.log("You draw");
+  }
+
+  console.log(`You have: ${userScore} points, the computer has: ${computerScore} points.`);
+
+  if (userScore === 3 || computerScore === 3) {
+    console.log("GAME OVER");
+    console.log(userScore === 3 ? "You won the game!" : "Computer won the game!");
+  }
+})
+
+
+
+
+

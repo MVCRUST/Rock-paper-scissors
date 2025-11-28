@@ -79,4 +79,24 @@ button:hover {
     width: 100%;
     color: #efa702;
     text-shadow: 1px 1px 1px black;
+    height: fit-content;
+}
+
+#userOptions {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    color: black;
+    text-shadow: none;
+    font-family: var(--ff-primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 30px;
+}
+
+#submitChoice {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
 }
