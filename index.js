@@ -32,11 +32,11 @@ form.addEventListener('submit', function (e) {
     return;
   }
 
-  const userChoice = selection.value.toLowerCase();
+  const userChoice = selection.value;
   userOption.textContent = userChoice;
 
   const num = Math.floor(Math.random() * 3);
-  const computerChoice = ["rock", "paper", "scissors"][num];
+  const computerChoice = ["Rock", "Paper", "Scissors"][num];
   compOption.textContent = computerChoice;
   // switch (num) {
   //   case 0:
@@ -55,29 +55,29 @@ form.addEventListener('submit', function (e) {
   console.log("User chose:", userChoice);
   console.log("Computer chose:", computerChoice);
 
-  if (userChoice == "rock" && num == 0) {
+  if (userChoice == "Rock" && num == 0) {
     console.log("Draw");
-  } else if (userChoice == "rock" && num == 1) {
+  } else if (userChoice == "Rock" && num == 1) {
     computerScore++;
     console.log("You lose");
-  } else if (userChoice == "rock" && num == 2) {
+  } else if (userChoice == "Rock" && num == 2) {
     userScore++;
     console.log("You win");
-  } else if (userChoice == "paper" && num == 0) {
+  } else if (userChoice == "Paper" && num == 0) {
     userScore++;
     console.log("You win");
-  } else if (userChoice == "paper" && num == 1) {
+  } else if (userChoice == "Paper" && num == 1) {
     console.log("You draw");
-  } else if (userChoice == "paper" && num == 2) {
+  } else if (userChoice == "Paper" && num == 2) {
     computerScore++;
     console.log("You lose");
-  } else if (userChoice == "scissors" && num == 0) {
+  } else if (userChoice == "Scissors" && num == 0) {
     computerScore++;
     console.log("You lose");
-  } else if (userChoice == "scissors" && num == 1) {
+  } else if (userChoice == "Scissors" && num == 1) {
     userScore++;
     console.log("You win");
-  } else if (userChoice == "scissors" && num == 2) {
+  } else if (userChoice == "Scissors" && num == 2) {
     userScore++;
     console.log("You draw");
   }

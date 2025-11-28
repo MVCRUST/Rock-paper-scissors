@@ -19,33 +19,43 @@
         <div id="gameCard">
             <h2>Pick an option</h2>
             <form action="">
-                <label>
-                    <input type="radio" name="rps" value="Rock">
-                    Rock
-                </label>
-                <label>
-                    <input type="radio" name="rps" value="Paper">
-                    Paper
-                </label>
-                <label>
-                    <input type="radio" name="rps" value="Scissors">
-                    Scissors
-                </label>
-                <button type="submit">Enter</button>
+                <div id="formPart1">
+                    <label>
+                        <input type="radio" name="rps" value="Rock">
+                        Rock
+                    </label>
+                    <label>
+                        <input type="radio" name="rps" value="Paper">
+                        Paper
+                    </label>
+                    <label>
+                        <input type="radio" name="rps" value="Scissors">
+                        Scissors
+                    </label>
+                </div>
+                <div id="form">
+                    <button type="submit">Enter</button>
+                </div>
             </form>
             <div id="displayChoice">
-                <div>
-                    <h2>You chose:</h2>
+                <div id="playerSelection">
+                    <h2>Player chose:&nbsp;</h2>
                     <p id="userSelection"></p>
                 </div>
-                <div>
-                    <h2>Computer chose:</h2>
+                <div id="compSelection">
+                    <h2>Computer chose:&nbsp;</h2>
                     <p id="computerSelection"></p>
                 </div>
             </div>
             <div id="displayScore">
-                <h3>User Score:&nbsp;<span id="userScore"></span></h3>
-                <h3>Computer Score:&nbsp;<span id="computerScore"></span></h3>
+                <div id="playerScore">
+                    <h3>Player Score:&nbsp;</h3>
+                    <p id="userScore"></p>
+                </div>
+                <div id="compScore">
+                    <h3>Computer Score:&nbsp;</h3>
+                    <p id="computerScore"></p>
+                </div>
             </div>
         </div>
 

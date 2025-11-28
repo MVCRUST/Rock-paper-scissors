@@ -26,15 +26,24 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
     text-shadow: 2px 2px 2px black;
     text-align: center;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 h1 {
     font-size: 60px;
 }
 
+h2, h3 {
+    font-size: 40px;
+    color: #efa702;
+    text-shadow: 1px 1px 1px black;
+}
+
 p {
     font-family: var(--ff-primary);
+    font-size: 30px;
+    color: black;
+    text-shadow: none;
 }
 
 main {
@@ -42,7 +51,7 @@ main {
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    height: 40%;
+    height: 50%;
     width: 80%;
 }
 
@@ -70,6 +79,8 @@ button:hover {
     width: 100%;
     height: 100%;
     background-color: white;
+    padding: 20px;
+    margin-top: 1rem;
 }
 
 #gameCard > * {
@@ -82,21 +93,51 @@ button:hover {
     height: fit-content;
 }
 
-#userOptions {
+form {
     display: flex;
     justify-content: center;
-    column-gap: 10px;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+#formPart1 {
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    display: flex;
+    justify-content: center;
     color: black;
     text-shadow: none;
     font-family: var(--ff-primary);
     font-weight: 600;
     margin-bottom: 1rem;
-    font-size: 30px;
+    font-size: 25px;
 }
 
-#submitChoice {
+form label input{
+    margin-left: 20px;
+    margin-right: 5px;
+}
+
+/* #displayChoice {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-bottom: 10px;
+    text-align: center;
+} */
+
+#displayScore, #displayChoice {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#playerScore, #compScore, #playerSelection, #compSelection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
 }
