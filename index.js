@@ -9,6 +9,7 @@ const compScoreEl = document.querySelector('#computerScore');
 const endGame = document.querySelector('#endGame');
 const playAgain = document.querySelector('#playAgain');
 const gameResult = document.querySelector('#result');
+const showResult = document.querySelector('#showResult');
 
 gameCard.style.display = "none";
 endGame.style.display = "none";
@@ -56,29 +57,37 @@ form.addEventListener('submit', function (e) {
   console.log("Computer chose:", computerChoice);
 
   if (userChoice == "Rock" && num == 0) {
+    showResult.textContent = "It's a draw";
     console.log("Draw");
   } else if (userChoice == "Rock" && num == 1) {
+    showResult.textContent = "You lose";
     computerScore++;
     console.log("You lose");
   } else if (userChoice == "Rock" && num == 2) {
+    showResult.textContent = "You win";
     userScore++;
     console.log("You win");
   } else if (userChoice == "Paper" && num == 0) {
+    showResult.textContent = "You win";
     userScore++;
     console.log("You win");
   } else if (userChoice == "Paper" && num == 1) {
+    showResult.textContent = "It's a draw";
     console.log("You draw");
   } else if (userChoice == "Paper" && num == 2) {
+    showResult.textContent = "You lose";
     computerScore++;
     console.log("You lose");
   } else if (userChoice == "Scissors" && num == 0) {
+    showResult.textContent = "You lose";
     computerScore++;
     console.log("You lose");
   } else if (userChoice == "Scissors" && num == 1) {
+    showResult.textContent = "You win";
     userScore++;
     console.log("You win");
   } else if (userChoice == "Scissors" && num == 2) {
-    userScore++;
+    showResult.textContent = "It's a draw";
     console.log("You draw");
   }
 
@@ -92,6 +101,7 @@ form.addEventListener('submit', function (e) {
     endGame.style.display = "block";
     playAgain.addEventListener('click', function() {
       location.reload();
+      endGame.style.display = "none";
     })
     console.log("GAME OVER");
     let result = userScore === 3 ? "You won the game!" : "Computer won the game!";

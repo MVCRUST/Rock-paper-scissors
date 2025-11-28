@@ -44,6 +44,7 @@ p {
     font-size: 30px;
     color: black;
     text-shadow: none;
+    font-weight: 600;
 }
 
 main {
@@ -51,7 +52,7 @@ main {
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    height: 50%;
+    height: fit-content;
     width: 80%;
 }
 
@@ -98,7 +99,6 @@ form {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 2rem;
 }
 
 #formPart1 {
@@ -114,7 +114,7 @@ label {
     font-family: var(--ff-primary);
     font-weight: 600;
     margin-bottom: 1rem;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 form label input{
@@ -134,22 +134,24 @@ form label input{
     width: fit-content;
 }
 
+#resultBox {
+    margin: 1rem 0;
+}
+
 #endGame {
-    display: flex !important;
-    justify-content: space-around;
     align-items: center;
-    flex-direction: column;
     width: 100%;
     height: 40%;
     text-align: center;
-}
-
-#endGame h2 {
-    color: white;
+    margin-top: 2rem;
 }
 
 #endGame p {
     color: white;
     font-family: var(--ff-display);
     text-shadow: 1px 1px 1px black;
+}
+
+#endGame button {
+    margin-top: 1rem;
 }
