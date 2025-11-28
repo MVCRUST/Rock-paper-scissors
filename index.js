@@ -6,8 +6,12 @@ const userOption = document.querySelector('#userSelection');
 const compOption = document.querySelector('#computerSelection');
 const userScoreEl = document.querySelector('#userScore');
 const compScoreEl = document.querySelector('#computerScore');
+const endGame = document.querySelector('#endGame');
+const playAgain = document.querySelector('#playAgain');
+const gameResult = document.querySelector('#result');
 
 gameCard.style.display = "none";
+endGame.style.display = "none";
 startBtn.addEventListener("click", hideStartBtn);
 
 function hideStartBtn() {
@@ -84,8 +88,14 @@ form.addEventListener('submit', function (e) {
   console.log(`You have: ${userScore} points, the computer has: ${computerScore} points.`);
 
   if (userScore === 3 || computerScore === 3) {
+    gameCard.style.display = "none";
+    endGame.style.display = "block";
+    playAgain.addEventListener('click', function() {
+      location.reload();
+    })
     console.log("GAME OVER");
-    console.log(userScore === 3 ? "You won the game!" : "Computer won the game!");
+    let result = userScore === 3 ? "You won the game!" : "Computer won the game!";
+    gameResult.textContent = result;
   }
 })
 
