@@ -74,6 +74,10 @@ button:hover {
     background-color: #efa702;
 }
 
+#startPlay {
+    margin-top: 2rem;
+}
+
 #gameCard {
     border-radius: 10px;
     border: 3px dashed black;
