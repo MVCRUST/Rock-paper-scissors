@@ -17,7 +17,7 @@
         </div>
 
         <div id="gameCard">
-            <h2>You chose:</h2>
+            <h2>Pick an option</h2>
             <form action="">
                 <label>
                     <input type="radio" name="rps" value="Rock">
@@ -33,20 +33,25 @@
                 </label>
                 <button type="submit">Enter</button>
             </form>
-            <!-- <div id="userOptions">
-                <input type="radio" id="Rock" name="RPSGame" value="Rock">
-                <label for="Rock">Rock</label><br>
-                <input type="radio" id="Paper" name="RPSGame" value="Paper">
-                <label for="Paper">Paper</label><br>
-                <input type="radio" id="Scissors" name="RPSGame" value="Scissors">
-                <label for="Scissors">Scissors</label>
+            <div id="displayChoice">
+                <div>
+                    <h2>You chose:</h2>
+                    <p id="userSelection"></p>
+                </div>
+                <div>
+                    <h2>Computer chose:</h2>
+                    <p id="computerSelection"></p>
+                </div>
             </div>
-            <div id="submitChoice">
-                <button type="submit">Enter</button>
-            </div> -->
-            <p id="userSelection"></p>
-            <h2>Computer chose:</h2>
-            <p id="computerSelection"></p>
+            <div id="displayScore">
+                <h3>User Score:&nbsp;<span id="userScore"></span></h3>
+                <h3>Computer Score:&nbsp;<span id="computerScore"></span></h3>
+            </div>
+        </div>
+
+        <div id="endGame">
+            <h2>Game Over!</h2>
+            <button type="submit">Play Again</button>
         </div>
     </main>
     

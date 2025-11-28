@@ -2,6 +2,10 @@ const startBtn = document.querySelector("#startGame");
 const startPlay = document.querySelector("#startPlay");
 const gameCard = document.querySelector("#gameCard");
 const form = document.querySelector('form');
+const userOption = document.querySelector('#userSelection');
+const compOption = document.querySelector('#computerSelection');
+const userScoreEl = document.querySelector('#userScore');
+const compScoreEl = document.querySelector('#computerScore');
 
 gameCard.style.display = "none";
 startBtn.addEventListener("click", hideStartBtn);
@@ -25,9 +29,11 @@ form.addEventListener('submit', function (e) {
   }
 
   const userChoice = selection.value.toLowerCase();
+  userOption.textContent = userChoice;
 
   const num = Math.floor(Math.random() * 3);
   const computerChoice = ["rock", "paper", "scissors"][num];
+  compOption.textContent = computerChoice;
   // switch (num) {
   //   case 0:
   //     console.log("Rock");
@@ -71,6 +77,9 @@ form.addEventListener('submit', function (e) {
     userScore++;
     console.log("You draw");
   }
+
+  compScoreEl.textContent = computerScore;
+  userScoreEl.textContent = userScore;
 
   console.log(`You have: ${userScore} points, the computer has: ${computerScore} points.`);
 
