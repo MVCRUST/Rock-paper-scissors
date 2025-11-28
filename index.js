@@ -52,6 +52,6 @@ do {
   console.log(
     `You have: ${userScore} points, the computer has: ${computerScore} points.`
   );
-} while (userScore < 3 || computerScore < 3){
+} while (userScore < 3 && computerScore < 3){
     return console.log("game over")
 };
